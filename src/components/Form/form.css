@@ -1,0 +1,44 @@
+    .formc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-left: 40px;
+        padding-right: 15px;
+        background-color: #EADEA6;
+        border-radius: 10px;
+    }
+    
+    .todo-input {
+        padding: 10px;
+        width: 20vw;
+        background: none;
+        border-radius: 5px;
+    }
+    
+    button {
+        padding: 10px;
+        background-color: #DEB881;
+        margin: 20px;
+        font-size: 1em;
+        border-radius: 10px;
+    }
+    
+    .inputdiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .select {
+        margin: 10px;
+        padding: 10px;
+        background: #DEB881;
+        border-radius: 5px;
+    }
+    
+    .filter-todo {
+        font-size: 1em;
+        background: #EADEA6;
+    }
