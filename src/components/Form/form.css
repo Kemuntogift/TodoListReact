@@ -17,6 +17,13 @@
         border-radius: 5px;
     }
     
+    .todo-edit {
+        padding: 10px;
+        width: 20vw;
+        background: none;
+        border-radius: 5px;
+    }
+    
     button {
         padding: 10px;
         background-color: #DEB881;
@@ -26,6 +33,12 @@
     }
     
     .inputdiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .inp {
         display: flex;
         justify-content: center;
         align-items: center;

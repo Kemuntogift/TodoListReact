@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Form from "../Form/Form";
-import { RiCloseCircleLine } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
 import { TiEdit } from "react-icons/ti";
+import "./todo.css";
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -44,7 +45,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className="edit-icon"
         />
-        <RiCloseCircleLine
+        <MdDeleteForever
           onClick={() => removeTodo(todo.id)}
           className="delete-icon"
         />

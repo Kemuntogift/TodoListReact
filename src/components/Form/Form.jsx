@@ -40,6 +40,7 @@ export default function Form(props) {
             </>
           ) : (
             <>
+            <div class="inp">
               <input
                 type="text"
                 placeholder="Add a Task"
@@ -47,21 +48,21 @@ export default function Form(props) {
                 class="todo-input"
                 onChange={handleChange}
               ></input>
-
               <button onClick={handleSubmit} class="todo-button">
                 Submit
-              </button>
+              </button>{" "}
+              <div class="select">
+                <select name="priority" class="filter-todo">
+                  <option value="all">Select Priority</option>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              </div>
             </>
           )}
         </form>
-        <div class="select">
-          <select name="priority" class="filter-todo">
-            <option value="all">Select Priority</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div>
       </div>
     </div>
   );
