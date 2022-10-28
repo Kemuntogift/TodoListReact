@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import React, { useState} from 'react';
+
 import "./form.css";
 
 export default function Form(props) {
@@ -13,7 +13,8 @@ export default function Form(props) {
     e.preventDefault();
 
     props.onSubmit({
-      text: input,
+      id: Math.floor(Math.random() * 2000),
+      text: input
     });
     setInput("");
   };

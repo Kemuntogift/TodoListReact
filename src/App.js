@@ -1,8 +1,8 @@
 import Body from "./components/BodyFolder/Body";
 import Form from "./components/Form/Form";
-import Todo from "./components/Todo/TodoList"
+import Todo from "./components/TodoList/TodoList"
 import "./App.css";
-import TodoList from "./components/Todo/TodoList";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   return (
