@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Form from "../Form/Form";
 import { MdDeleteForever } from "react-icons/md";
 import { TiEdit } from "react-icons/ti";
@@ -10,11 +10,11 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     value: "",
   });
 
-  const submitUpdate = (value) => {
+  const submitUpdate = value => {
     updateTodo(edit.id, value);
     setEdit({
         id:null,
-      value: "",
+      value:""
     });
   };
 

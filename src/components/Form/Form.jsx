@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import "./form.css";
 
 export default function Form(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
-  const handleChange = (e) => {
-    setInput(e.target.value);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -20,18 +26,17 @@ export default function Form(props) {
   };
   return (
     <div class="formc">
-      <div>
-        <h3>Add Task</h3>
-      </div>
+    
       <div class="inputdiv">
         <form onSubmit={handleSubmit} class="todo-form">
           {props.edit ? (
             <>
               <input
-                type="text"
+                name="text"
                 placeholder="Update/Edit"
                 value={input}
-                class="todo-edit"
+                ref={inputRef}
+                class="todo-input edit"
                 onChange={handleChange}
               ></input>
               <button onClick={handleChange} class="todo-button-edit">
@@ -40,25 +45,19 @@ export default function Form(props) {
             </>
           ) : (
             <>
-            <div class="inp">
-              <input
-                type="text"
-                placeholder="Add a Task"
-                value={input}
-                class="todo-input"
-                onChange={handleChange}
-              ></input>
-              <button onClick={handleSubmit} class="todo-button">
-                Submit
-              </button>{" "}
-              <div class="select">
-                <select name="priority" class="filter-todo">
-                  <option value="all">Select Priority</option>
-                  <option value="low">Low</option>
-                  <option value="medium">Medium</option>
-                  <option value="high">High</option>
-                </select>
-              </div>
+              <div class="inp">
+                <input
+                  name="text"
+                  placeholder="Add a Task"
+                  value={input}
+                  ref={inputRef}
+                  class="todo-input"
+                  onChange={handleChange}
+                ></input>
+                <button onClick={handleSubmit} class="todo-button">
+                  Add Task
+                </button>
+                
               </div>
             </>
           )}

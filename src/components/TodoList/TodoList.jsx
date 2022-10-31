@@ -5,6 +5,8 @@ import "./todolist.css";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
+  const [handleSearch, setHandleSearch] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
   const addTodo = (todo) => {
     const addedTodos = [todo, ...todos];
 
@@ -34,8 +36,28 @@ export default function TodoList() {
     setTodos(updatedTodos);
   };
 
+  const searchItems = (searchValue) => {
+    setHandleSearch(searchValue);
+    if (handleSearch !== "") {
+      const filteredData = todos.filter((item) => {
+        return Object.values(item)
+          .join("")
+          .toLowerCase()
+          .includes(handleSearch.toLowerCase());
+      });
+      setFilteredResults(filteredData);
+    } else {
+      setFilteredResults(todos);
+    }
+  };
+
   return (
-    <div>
+    <div className="forsearch">
+      <input
+        type="text"
+        onChange={(e) => searchItems(e.target.value)}
+        placeholder="Search"
+      />
       <Form onSubmit={addTodo} />
       <div className="list-container">
         <Todo

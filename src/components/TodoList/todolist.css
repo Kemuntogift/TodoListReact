@@ -11,3 +11,14 @@
 .list-container::-webkit-scrollbar {
     width: 0 !important;
 }
+
+.forsearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forsearch input {
+    margin: 10px;
+}
