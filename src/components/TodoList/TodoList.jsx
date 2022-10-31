@@ -57,6 +57,7 @@ export default function TodoList() {
         type="text"
         onChange={(e) => searchItems(e.target.value)}
         placeholder="Search"
+        className="todosearch"
       />
       <Form onSubmit={addTodo} />
       <div className="list-container">

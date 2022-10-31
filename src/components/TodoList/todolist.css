@@ -22,3 +22,10 @@
 .forsearch input {
     margin: 10px;
 }
+
+.todosearch {
+    padding: 10px;
+    width: 20vw;
+    background: none;
+    border-radius: 5px;
+}
